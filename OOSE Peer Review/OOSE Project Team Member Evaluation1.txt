@@ -1,0 +1,40 @@
+OOSE Project Team Member Evaluation
+
+Your name: Elana Stroud
+Your group number: 21
+Name of group member being evaluated: Joseph Min
+
+Instructions: Fill out one copy of this form for each member of your
+team besides yourself.  These evaluations will be kept 100%
+confidential.  There will be an entry in WebCT to submit your
+evaluations; zip all of your evals up and submit there.
+
+======================================================================
+Amount of time committed (percentage, e.g. "they did 20% of the total")
+
+15%
+----------------------------------------------------------------------
+Ideas contributed to overall project structure
+
+Some of the user design and iOS development.
+----------------------------------------------------------------------
+Effort contributed to design document
+
+Good contribution.
+----------------------------------------------------------------------
+Contributions to coding
+
+Contributed to the iOS side of things.
+----------------------------------------------------------------------
+Was this person a good team player?
+
+Yep.
+----------------------------------------------------------------------
+Any other comments you want to add
+
+Nope.
+----------------------------------------------------------------------
+
+Total Individual Score:  100/100
+
+
