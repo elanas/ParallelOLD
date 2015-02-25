@@ -76,7 +76,7 @@ void serialFilterFirst ( int data_len, unsigned int* input_array, unsigned int* 
   timeval_subtract ( &tresult, &tb, &ta );
 
   // printf ("Serial filter first took %lu seconds and %lu microseconds.\n", tresult.tv_sec, tresult.tv_usec );
-    fprintf (f, "%lu\t,%lu\n", tresult.tv_sec, tresult.tv_usec );
+    fprintf (f, "%d,%lu\t,%lu\n", filter_len, tresult.tv_sec, tresult.tv_usec );
 
 }
 
@@ -141,6 +141,7 @@ int main( int argc, char** argv )
     // serialDataFirst ( DATA_LEN, input_array, serial_array, filter_len, filter_list, f );
     // memset ( output_array, 0, DATA_LEN );
 
+    printf("working on filter: %d\n", filter_len);
     serialFilterFirst ( DATA_LEN, input_array, output_array, filter_len, filter_list, f );
     // checkData ( serial_array, output_array );
     memset ( output_array, 0, DATA_LEN );

@@ -18,7 +18,7 @@
 
 /* Example filter sizes */
 #define DATA_LEN  512*512*128
-#define FILTER_LEN  4
+#define FILTER_LEN  1024
 #define NUM_THREADS 16
 
 
@@ -136,6 +136,7 @@ int main( int argc, char** argv )
     // printf("\nDATA_LEN = %d, FILTER_LEN = %d \n------------------------------------\n", DATA_LEN, filter_len);
     // fprintf(f, "\n");
 
+    printf("working on filter: %d\n", filter_len);
     serialDataFirst ( DATA_LEN, input_array, serial_array, filter_len, filter_list, f );
     memset ( output_array, 0, DATA_LEN );
 
