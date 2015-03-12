@@ -15,7 +15,8 @@ public class CoinFlip implements Runnable {
         // System.out.println ( thread_id + ": Running thread with " + numThreadFlips + " flips." );
         for (int x = 0; x < numThreadFlips; x++) {
             if(flip() == 0) {
-                increment();
+                // increment();
+                numHeads++;
             }
         }
     }
@@ -32,6 +33,7 @@ public class CoinFlip implements Runnable {
     public CoinFlip(int id, int numThreadFlips) {
         this.thread_id = id;
         this.numThreadFlips = numThreadFlips;
+        this.numHeads = 0;
     }
 
     public static void main (String [] args) {
