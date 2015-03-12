@@ -1,0 +1,33 @@
+A pdf named solutions.pdf briefly answering the following questions. Give the unix command line you used to answer the question. You can copy and paste this list into a txt file and answer there.
+
+1. How large is the system's root drive, mounted on “/”?
+
+   command: du -h 
+   answer: 760M in root drive
+
+2. How much memory does the system have?
+
+    command: free -m
+    answer: 992 kb
+
+3. How much memory is being used?
+
+   command: free -m
+   answer: 331 kb 
+
+What linux kernel version are you running?
+
+    command: uname -r
+    answer: 3.13.0-44-generic
+
+What is the MAC address of the Ethernet card?
+
+    command: ifconfig -a
+    answer: eth0  12:8e:96:08:12:e1  
+          
+What is the last message in the system error log?
+
+    command: cd /var/log/
+             vi syslog
+    answer: Feb  7 04:36:18 ip-172-31-58-109 rsyslogd: [origin software="rsyslogd" swVersion="7.4.4" x-pid="916" x-info="http://www.rsyslog.com"] start
+
