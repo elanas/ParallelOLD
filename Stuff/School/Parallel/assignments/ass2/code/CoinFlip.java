@@ -1,6 +1,7 @@
 // import java.util.concurrent.*;
 // import java.util.Random.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.io.FileWriter;
 
 
 public class CoinFlip implements Runnable {
@@ -11,18 +12,19 @@ public class CoinFlip implements Runnable {
 
     public void run ()
     {
-        System.out.println ( thread_id + ": Running thread with " + numThreadFlips + " flips." );
-
+        // System.out.println ( thread_id + ": Running thread with " + numThreadFlips + " flips." );
         for (int x = 0; x < numThreadFlips; x++) {
             if(flip() == 0) {
-                numHeads++;
+                increment();
             }
         }
     }
 
+    public static synchronized void increment() {
+        numHeads = numHeads + 1;
+    }
+
     public int flip() {
-        // int ran = new ThreadLocalRandom.current().nextInt(2);
-        // return ran;
         ThreadLocalRandom random = ThreadLocalRandom.current(); 
         return random.nextInt(2);
     }
@@ -33,6 +35,15 @@ public class CoinFlip implements Runnable {
     }
 
     public static void main (String [] args) {
+
+        FileWriter f = null;
+
+        try {
+            f = new FileWriter("speedup.csv", true);
+            // f.append("Time, Test");
+        } catch (Exception e) {
+            System.out.println("file exception");
+        }
 
         if(args.length != 2) {
             System.out.println("\nUsage: CoinFlip #thread #iterations\n");
@@ -70,5 +81,14 @@ public class CoinFlip implements Runnable {
 
         System.out.println("\n" + numHeads + " heads in " + numFlips + " coin tosses.");
         System.out.println("Total elapsed time: " + t2 + "ms");
+
+        try {
+            f.append(Long.toString(t2) + "\n");
+            f.flush();
+            f.close();
+
+        } catch (Exception e) {
+
+        }
     }
 }
